@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hot Air Balloon Airdrop</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background: skyblue;
+        }
+        .balloon {
+            position: absolute;
+            width: 100px;
+            height: 150px;
+            top: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: url('E:\PROJECT DIRECTORY\hot-air-balloon.png') no-repeat center center;
+            background-size: contain;
+        }
+        .airdrop {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            top: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: url('E:\PROJECT DIRECTORY\airdrop.png') no-repeat center center;
+            background-size: contain;
+            display: none;
+        }
+        .ground {
+            position: absolute;
+            width: 100%;
+            height: 50px;
+            background: green;
+            bottom: 0;
+        }
+        @keyframes drop {
+            0% { top: 60px; }
+            100% { top: 90vh; }
+        }
+    </style>
+</head>
+<body>
+    <div class="balloon" id="balloon"></div>
+    <div class="airdrop" id="airdrop"></div>
+    <div class="ground"></div>
+
+    <script>
+        const balloon = document.getElementById('balloon');
+        const airdrop = document.getElementById('airdrop');
+
+        balloon.addEventListener('click', () => {
+            airdrop.style.display = 'block';
+            airdrop.style.animation = 'drop 3s forwards';
+        });
+    </script>
+</body>
+</html>
